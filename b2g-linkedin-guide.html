@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn 國際求職完整講義 — B2G Career Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0f1c2e;
+    --navy-mid: #1a2f47;
+    --teal: #1d9e75;
+    --teal-light: #e1f5ee;
+    --amber: #ba7517;
+    --amber-light: #faeeda;
+    --off-white: #f8f6f1;
+    --text: #1a1a1a;
+    --text-mid: #4a4a4a;
+    --text-muted: #888;
+    --border: rgba(0,0,0,0.1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5vw;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+  .logo span { color: var(--teal); }
+  nav a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--navy);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav a:hover { color: var(--teal); border-color: var(--teal); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+  }
+  .hero-left {
+    background: var(--navy);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 7vw 5vw 7vw 8vw;
+  }
+  .hero-tag {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 2rem;
+  }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: #fff;
+    line-height: 1.18;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--teal);
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.9;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--teal);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 1rem 2.2rem;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-cta:hover { background: #0f6e56; transform: translateY(-1px); }
+
+  .hero-right {
+    background: var(--off-white);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 7vw 8vw 7vw 5vw;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+  .stat-list { display: flex; flex-direction: column; gap: 2rem; }
+  .stat-item { display: flex; align-items: flex-start; gap: 1.2rem; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    color: var(--navy);
+    line-height: 1;
+    min-width: 3rem;
+  }
+  .stat-num span { font-size: 1rem; color: var(--teal); }
+  .stat-text {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    padding-top: 0.3rem;
+  }
+  .stat-text strong { font-weight: 500; color: var(--text); display: block; }
+
+  /* DIVIDER */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 8vw;
+  }
+
+  /* WHAT YOU GET */
+  .section {
+    padding: 7rem 8vw;
+  }
+  .section-header {
+    display: flex; align-items: baseline; gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .section-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+    color: var(--teal-light);
+    line-height: 1;
+    user-select: none;
+  }
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .content-card {
+    background: var(--off-white);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+  .content-card:hover { background: var(--teal-light); }
+  .card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .card-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  .card-desc {
+    font-size: 0.83rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+
+  /* FOR WHO */
+  .for-who {
+    background: var(--navy);
+    padding: 7rem 8vw;
+  }
+  .for-who .section-num { color: rgba(255,255,255,0.06); }
+  .for-who .section-title { color: #fff; }
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 4rem;
+  }
+  .who-card {
+    border: 0.5px solid rgba(255,255,255,0.12);
+    padding: 2.5rem 2rem;
+  }
+  .who-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .who-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0.8rem;
+  }
+  .who-desc {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.85;
+  }
+
+  /* PREVIEW */
+  .preview-section {
+    padding: 7rem 8vw;
+    background: #fff;
+  }
+  .preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    align-items: center;
+    margin-top: 4rem;
+  }
+  .preview-list { list-style: none; }
+  .preview-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+  .preview-list li:first-child { border-top: 0.5px solid var(--border); }
+  .check {
+    width: 18px; height: 18px;
+    background: var(--teal);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 3px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .check::after {
+    content: '';
+    width: 6px; height: 4px;
+    border-left: 1.5px solid #fff;
+    border-bottom: 1.5px solid #fff;
+    transform: rotate(-45deg) translateY(-1px);
+    display: block;
+  }
+  .preview-aside {
+    background: var(--off-white);
+    padding: 3rem 2.5rem;
+  }
+  .preview-aside-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .preview-aside-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+  }
+  .preview-aside-desc {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    margin-bottom: 2rem;
+  }
+  .aside-stat {
+    display: flex; gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .aside-stat-item { text-align: center; }
+  .aside-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: var(--navy);
+    display: block;
+  }
+  .aside-stat-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* FORM SECTION */
+  .form-section {
+    background: var(--off-white);
+    padding: 7rem 8vw;
+  }
+  .form-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: start;
+  }
+  .form-left {}
+  .form-left .section-title { margin-bottom: 1.2rem; }
+  .form-left p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.9;
+    margin-bottom: 0.6rem;
+  }
+  .form-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .form-card {
+    background: #fff;
+    padding: 2.5rem;
+    border: 0.5px solid var(--border);
+  }
+  .form-card label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    margin-top: 1.4rem;
+  }
+  .form-card label:first-of-type { margin-top: 0; }
+  .form-card input[type="text"],
+  .form-card input[type="email"],
+  .form-card input[type="url"] {
+    width: 100%;
+    border: 0.5px solid var(--border);
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text);
+    background: var(--off-white);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .form-card input:focus { border-color: var(--teal); background: #fff; }
+
+  .checkbox-group { margin-top: 1.4rem; }
+  .checkbox-label {
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--navy) !important;
+    display: block;
+    margin-bottom: 0.8rem !important;
+    margin-top: 0 !important;
+  }
+  .checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+  .checkbox-item input[type="checkbox"] {
+    width: 16px; height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--teal);
+    cursor: pointer;
+  }
+  .checkbox-item span {
+    font-size: 0.83rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    cursor: pointer;
+  }
+
+  .form-divider {
+    height: 0.5px;
+    background: var(--border);
+    margin: 1.8rem 0;
+  }
+
+  .service-block {
+    background: var(--navy);
+    padding: 1.5rem;
+    margin-top: 1.4rem;
+  }
+  .service-block-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+  .service-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.7rem 0;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  }
+  .service-option:last-child { border-bottom: none; }
+  .service-option input[type="checkbox"] {
+    width: 16px; height: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--teal);
+    cursor: pointer;
+  }
+  .service-option-text { flex: 1; }
+  .service-name {
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    line-height: 1.4;
+  }
+  .service-desc {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.2rem;
+  }
+  .service-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--teal);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 1.8rem;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .submit-btn:hover { background: #0f6e56; transform: translateY(-1px); }
+  .privacy-note {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.8rem;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 3rem 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+  }
+  footer .logo { color: #fff; }
+  .footer-links {
+    display: flex; gap: 2rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--teal); }
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 6vw 4rem; }
+    .hero-right { padding: 4rem 6vw 5rem; }
+    .content-grid { grid-template-columns: 1fr; gap: 2px; }
+    .who-grid { grid-template-columns: 1fr; }
+    .preview-grid { grid-template-columns: 1fr; }
+    .form-inner { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-links { justify-content: center; }
+    .section { padding: 5rem 6vw; }
+    .for-who { padding: 5rem 6vw; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">B<span>2</span>G</div>
+  <a href="#form">免費領取講義</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">B2G Career Consulting · 免費資源</p>
+    <h1 class="hero-title">
+      你的 LinkedIn，<br>
+      是在幫你找工作，<br>
+      還是<em>讓你隱形</em>？
+    </h1>
+    <p class="hero-desc">
+      超過 70% 的職位從未公開發布。大部分機會，是在別人主動搜尋到你的那一刻發生的。這份講義告訴你怎麼讓對的人找到你——從 Profile 優化到建立人脈，完整的實作指南。
+    </p>
+    <a href="#form" class="hero-cta">免費下載完整講義</a>
+  </div>
+  <div class="hero-right">
+    <p class="hero-stat-label">講義包含</p>
+    <div class="stat-list">
+      <div class="stat-item">
+        <div class="stat-num">8<span>章</span></div>
+        <div class="stat-text">
+          <strong>從 Profile 到人脈的完整架構</strong>
+          照片、Headline、About、SEO、建立人脈、研究公司、內容經營
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4<span>週</span></div>
+        <div class="stat-text">
+          <strong>行動計畫，不只是理論</strong>
+          每週具體任務清單，看完就知道下一步要做什麼
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">20<span>+</span></div>
+        <div class="stat-text">
+          <strong>實際可用的訊息模板</strong>
+          Connection request、Coffee chat 邀請、Recruiter 聯繫——全部都有範例
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WHAT YOU GET -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2 class="section-title">這份講義告訴你什麼</h2>
+  </div>
+  <div class="content-grid">
+    <div class="content-card">
+      <span class="card-icon">◎</span>
+      <div class="card-title">LinkedIn 和履歷的根本差異</div>
+      <p class="card-desc">很多人把 LinkedIn 當作履歷的複製貼上。這份講義從第一頁就說清楚——為什麼這樣做會讓你在市場上消失。</p>
+    </div>
+    <div class="content-card">
+      <span class="card-icon">◎</span>
+      <div class="card-title">Profile 每個區塊怎麼填</div>
+      <p class="card-desc">照片、Headline、About section、Experience——每個部分都有新鮮人和 Junior 兩個版本的具體範例，不是空泛的建議。</p>
+    </div>
+    <div class="content-card">
+      <span class="card-icon">◎</span>
+      <div class="card-title">LinkedIn SEO 的邏輯</div>
+      <p class="card-desc">Recruiter 怎麼搜尋你、演算法看什麼、關鍵詞放在哪個欄位才有用——讓對的人主動找到你。</p>
+    </div>
+    <div class="content-card">
+      <span class="card-icon">◎</span>
+      <div class="card-title">怎麼聯繫陌生人不尷尬</div>
+      <p class="card-desc">Connection request、Coffee chat 邀請、Recruiter 訊息——300 字元怎麼寫才不會被無視，有現成模板可以用。</p>
+    </div>
+    <div class="content-card">
+      <span class="card-icon">◎</span>
+      <div class="card-title">投前怎麼用 LinkedIn 研究公司</div>
+      <p class="card-desc">五個投前必做的步驟，讓你在面試時說出「我注意到你們最近在做 X」，而不是泛泛說「我很欣賞貴公司」。</p>
+    </div>
+    <div class="content-card">
+      <span class="card-icon">◎</span>
+      <div class="card-title">內容經營：要不要發文</div>
+      <p class="card-desc">不是每個人都需要發文，但活躍度影響你被找到的機會。五種完全沒經驗的人可以發的主題，加上一張 Do's & Don'ts 速查表。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="for-who">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2 class="section-title">這份講義適合你嗎</h2>
+  </div>
+  <div class="who-grid">
+    <div class="who-card">
+      <span class="who-tag">完全沒經驗</span>
+      <div class="who-title">剛畢業或在讀的大學生</div>
+      <p class="who-desc">沒有正職工作經驗也有對應的策略。講義裡每個章節都有「完全沒經驗」版本的具體範例，從 Headline 怎麼填到怎麼用實習和社團填 Experience。</p>
+    </div>
+    <div class="who-card">
+      <span class="who-tag">Junior · 1–3 年</span>
+      <div class="who-title">有工作經驗、想進入國際職場</div>
+      <p class="who-desc">如何把既有的工作經驗說得更有說服力、如何對齊目標職位的關鍵詞、如何用 LinkedIn 主動找到機會而不是等工作上門。</p>
+    </div>
+    <div class="who-card">
+      <span class="who-tag">海內外皆適用</span>
+      <div class="who-title">在台灣或海外求職的華語背景人才</div>
+      <p class="who-desc">無論你在台灣找台灣的工作，或在英國、歐洲、新加坡找國際職位，LinkedIn 的邏輯是一樣的。這份講義以英國市場為主要框架，原則普遍適用。</p>
+    </div>
+    <div class="who-card">
+      <span class="who-tag">正在求職或準備求職</span>
+      <div class="who-title">已經在投履歷、或想提前佈局</div>
+      <p class="who-desc">LinkedIn 最有效的使用方式，是在你還不急著找工作的時候就開始建立關係。越早開始，機會出現的時候你越不慌張。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section class="preview-section">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2 class="section-title">講義裡你會學到</h2>
+  </div>
+  <div class="preview-grid">
+    <ul class="preview-list">
+      <li><div class="check"></div><span>為什麼 LinkedIn 比投履歷更能幫你找到工作</span></li>
+      <li><div class="check"></div><span>Headline 的正確公式（新鮮人版 vs. Junior 版）</span></li>
+      <li><div class="check"></div><span>About section 怎麼說故事，而不是列形容詞</span></li>
+      <li><div class="check"></div><span>Skills section 怎麼填才能出現在 recruiter 搜尋結果</span></li>
+      <li><div class="check"></div><span>開啟「Open to Work」的正確方式</span></li>
+      <li><div class="check"></div><span>Coffee chat 裡應該問哪些問題</span></li>
+      <li><div class="check"></div><span>為什麼每次 coffee chat 結尾要問同一句話</span></li>
+      <li><div class="check"></div><span>投前五個步驟讓你在面試中脫穎而出</span></li>
+    </ul>
+    <div class="preview-aside">
+      <span class="preview-aside-tag">數據支撐</span>
+      <div class="preview-aside-title">這不是感覺，是可以驗證的市場邏輯</div>
+      <p class="preview-aside-desc">講義裡的每一條建議都有對應的市場邏輯——從 LinkedIn 的演算法運作方式，到 recruiter 實際怎麼搜尋候選人。</p>
+      <div class="aside-stat">
+        <div class="aside-stat-item">
+          <span class="aside-stat-num">85%</span>
+          <span class="aside-stat-label">職位靠人脈填補</span>
+        </div>
+        <div class="aside-stat-item">
+          <span class="aside-stat-num">21×</span>
+          <span class="aside-stat-label">有照片的 profile 曝光率</span>
+        </div>
+        <div class="aside-stat-item">
+          <span class="aside-stat-num">70%</span>
+          <span class="aside-stat-label">職位從未公開發布</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="form">
+  <div class="form-inner">
+    <div class="form-left">
+      <div class="section-header" style="margin-bottom: 1.5rem;">
+        <div class="section-num">04</div>
+        <h2 class="section-title">免費領取完整講義</h2>
+      </div>
+      <p>填寫以下資料，講義連結會在送出後直接顯示給你。</p>
+      <p>如果你勾選同意，B2G 會不定期分享職涯相關內容——沒有廣告，沒有每週轟炸，都是真正有用的東西。</p>
+      <p class="form-note">
+        你的資料只用於 B2G 的職涯諮詢服務溝通，不會轉給第三方。<br>
+        你可以隨時回信取消訂閱。
+      </p>
+    </div>
+
+    <div class="form-card">
+      <label for="name">姓名</label>
+      <input type="text" id="name" placeholder="你的名字">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="your@email.com">
+
+      <label for="linkedin">LinkedIn 個人頁面連結（選填）</label>
+      <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourname">
+
+      <div class="form-divider"></div>
+
+      <div class="checkbox-group">
+        <span class="checkbox-label">你願意</span>
+        <div class="checkbox-item">
+          <input type="checkbox" id="consent-content">
+          <label for="consent-content" style="all:unset; cursor:pointer;">
+            <span>收到 B2G 不定期的職涯內容（求職技巧、LinkedIn 策略、市場觀察）</span>
+          </label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="consent-reach">
+          <label for="consent-reach" style="all:unset; cursor:pointer;">
+            <span>讓 B2G 在適當時機與我聯繫，了解是否需要更多求職協助</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="service-block">
+        <span class="service-block-tag">需要個人化的幫助？（選填）</span>
+        <div class="service-option">
+          <input type="checkbox" id="svc-text">
+          <div class="service-option-text">
+            <span class="service-name">LinkedIn + 履歷文字健診</span>
+            <span class="service-desc">書面診斷報告，指出問題並給出具體改寫建議</span>
+          </div>
+          <span class="service-price">£20</span>
+        </div>
+        <div class="service-option">
+          <input type="checkbox" id="svc-call">
+          <div class="service-option-text">
+            <span class="service-name">一小時履歷會談</span>
+            <span class="service-desc">一對一視訊，從方向到句子完整討論</span>
+          </div>
+          <span class="service-price">£30</span>
+        </div>
+      </div>
+
+      <button class="submit-btn" onclick="handleSubmit()">送出，領取完整講義</button>
+      <p class="privacy-note">送出即代表你同意以上勾選的項目。隨時可以回信取消。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">B<span>2</span>G Career Consulting</div>
+  <ul class="footer-links">
+    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+    <li><a href="https://threads.net" target="_blank">Threads</a></li>
+    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 B2G Career Consulting</p>
+</footer>
+
+<script>
+// ============================================================
+// 第一步完成後，把下面兩行換成你自己的值
+// ============================================================
+const SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+const GUIDE_URL  = 'YOUR_GOOGLE_DRIVE_PDF_LINK_HERE';
+// ============================================================
+
+async function handleSubmit() {
+  const name    = document.getElementById('name').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const linkedin = document.getElementById('linkedin').value.trim();
+
+  const consentContent = document.getElementById('consent-content').checked;
+  const consentReach   = document.getElementById('consent-reach').checked;
+  const svcText        = document.getElementById('svc-text').checked;
+  const svcCall        = document.getElementById('svc-call').checked;
+
+  if (!name || !email) {
+    alert('請填寫姓名和 Email。');
+    return;
+  }
+  const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailReg.test(email)) {
+    alert('請填寫有效的 Email 地址。');
+    return;
+  }
+
+  const btn = document.querySelector('.submit-btn');
+  btn.textContent = '送出中...';
+  btn.disabled = true;
+
+  const services = [];
+  if (svcText) services.push('文字健診 £20');
+  if (svcCall) services.push('一小時會談 £30');
+
+  const payload = {
+    name,
+    email,
+    linkedin,
+    consent_content: consentContent ? '是' : '否',
+    consent_reach:   consentReach   ? '是' : '否',
+    services:        services.length ? services.join(' + ') : '無',
+    timestamp:       new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })
+  };
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch (e) {
+    // no-cors 模式下 fetch 一定會走到這裡，但資料實際上已送出
+  }
+
+  btn.textContent = '✓ 已送出——講義連結在下方';
+  btn.style.background = '#0f6e56';
+
+  const note = document.querySelector('.privacy-note');
+  note.innerHTML = `
+    <strong style="color: var(--teal); font-size: 0.9rem;">
+      講義連結：<a href="${GUIDE_URL}" target="_blank" style="color: var(--teal);">點此下載完整講義 →</a>
+    </strong><br>
+    <span style="font-size:0.75rem; color: var(--text-muted);">
+      如有問題，歡迎寄信至 hello@b2gconsulting.com
+    </span>`;
+}
+</script>
+
+</body>
+</html>
